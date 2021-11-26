@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css" />
+
+    <!-- Bootstrap js -->
+    <script src="../bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <title>Assesment</title>
+
+    <style>
+        .container {
+            margin-top: 20%;
+            text-align: center;
+            /* margin-left: 10%; */
+        }
+
+        .content {
+            padding: 15px 25px;
+            font-size: 24px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        input[type='text']{
+            position: absolute; 
+            display: block;
+            width: 400px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #bccae5;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            margin-left: 50px;
+            /* text-align: center; */
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 5px 10px;
+            cursor: pointer;
+            color:black;
+            font-weight: bold;
+            background-color:aqua;
+            box-shadow: 0 5px #999;  
+            /* margin: 20px; */
+        }
+
+        .btn:hover {
+            background-color: #3e8e41
+        }
+
+        .btn:active {
+            box-shadow: 0 3px #666;
+            transform: translateY(4px);
+        }
+    </style>
+    <script>
+        function Check_leapyear() {
+            var leapyear = document.getElementById("txt").value;
+            if ((leapyear % 4 == 0) && (leapyear % 100 != 0) || (leapyear % 400 == 0)) {
+                console.log(leapyear, "leapyear")
+                document.getElementById("leap").innerHTML =leapyear + "is a leap year";
+                document.getElementById("name").innerHTML ="VIMAL RAJ";
+                document.getElementById("name").style.textDecoration ="underline";
+                document.getElementById("leap").style.color ="blue";
+            }
+            else {
+                document.getElementById("leap").innerHTML =leapyear + "is not a leap year";
+                document.getElementById("name").innerHTML ="VIMAL RAJ";
+                document.getElementById("name").style.textDecoration ="underline";
+                document.getElementById("leap").style.color ="blue";
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <form>
+                <h1 id="leap" >please enter the leapyear </h1>
+                <h1 id="name"></h1>
+
+                <input type="text" id="txt" value ="2021"/>
+                <input class = "btn" type="button" id="go" onclick="Check_leapyear()" value="Check leap year" />
+            </form>
+        </div>
+        <p id="leap"></p>
+    </div>
+   
+</body>
+
+</html>
